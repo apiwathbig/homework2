@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<style>
+    .button {
+      background-color: #94E5AB;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .button2 {background-color: #4EC1B1;}
+    .button3 {background-color: #208294;}
+    .button4 {background-color: #0E5187;}
+</style>
+
+<body>
+<Table>
+<Tr>
+    <Td><center><button class="button">รุ่นการ์ดจอราคาถูก</button></center></Td>
+    <td><center><button class="button button2">รุ่นการ์ดจอแพง</button></center></td>
+    
+</Tr>
+
+<Tr>
+    <Td><canvas id="myChart" style="width:200%;max-width:600px"></canvas></Td>
+    <td><canvas id="myChart2" style="width:200%;max-width:600px"></canvas></td>
+    
+</Tr>
+</table>
+
+<Table>
+  <Tr>
+      <Td><center><button class="button button3">ราคา<br></button></center></Td>
+      <td><center><button class="button button4">ราคา<br></button></center></td>
+  </Tr>
+  
+  <Tr>
+      <Td><canvas id="myChart3" style="width:200%;max-width:600px"></canvas></Td>
+      <td><canvas id="myChart4" style="width:200%;max-width:600px"></canvas></td>
+  </Tr>
+  </table>
+
+<script>
+var barColors = [
+  "#00acc1",
+  "#00897b",
+  "#E68420",
+  "#0a8f08",
+  "#590160",
+  "#00FFFF",
+  "#33CCE5",
+  "#6699CC",
+  "#ff5722",
+  "#CC3399",
+  "#FFE401",
+  "#fdd835"
+];
+var xValues = ['RTX 3050', 'RTX 3060', 'RTX 3060ti', 'RTX 3070','RTX 3070ti'];
+var yValues = [12900,14650,17810,24675,25640];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Amount"
+    }
+  }
+});
+
+var xValues = ['RTX 3080', 'RTX 3080ti', 'RTX 3090','RTX 3090ti'];
+var yValues = [34635,47525,67975,76900];
+new Chart("myChart2", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Amount"
+    }
+  }
+});
+
+var xValues3 = ['RTX 3050', 'RTX 3060', 'RTX 3060ti', 'RTX 3070','RTX 3070ti'];
+var yValues3 = [12900,14650,17810,24675,25640];
+new Chart("myChart3", {
+  type: "bar",
+  data: {
+    labels: xValues3,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues3
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Amount"
+    }
+  }
+});
+
+var xValues4 = ['RTX 3080', 'RTX 3080ti', 'RTX 3090','RTX 3090ti'];
+var yValues4 = [34635,47525,67975,76900];
+new Chart("myChart4", {
+  type: "bar",
+  data: {
+    labels: xValues4,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues4
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Amount"
+    }
+  }
+});
+
+
+// JS 
+</script>
+
+</body>
+</html>

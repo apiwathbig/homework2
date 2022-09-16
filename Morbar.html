@@ -1,0 +1,94 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getting Started with Chart JS with www.chartjs3.com</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .chartMenu {
+        width: 100vw;
+        height: 40px;
+        background: #1A1A1A;
+        color: rgba(255, 26, 104, 1);
+      }
+      .chartMenu p {
+        padding: 10px;
+        font-size: 20px;
+      }
+      .chartCard {
+        width: 100vw;
+        height: calc(100vh - 40px);
+        background: rgba(255, 26, 104, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 700px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px rgba(255, 26, 104, 1);
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chartMenu">
+      <p>WWW.CHARTJS3.COM (Chart JS 3.8.2)</p>
+    </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    // setup 
+    const data = {
+      labels: ['RTX 3050', 'RTX 3060', 'RTX 3060ti', 'RTX 3070','RTX 3070ti' ,'RTX 3080', 'RTX 3080ti', 'RTX 3090','RTX 3090ti'],
+      datasets: [{
+        label: 'Advice',
+        data: [12900,14650,17810,24675,25640,34635,47525,67975,76900],
+        backgroundColor: '#b91d47',
+        borderColor: 'rgba(54, 162, 235, 1)',          
+      },{
+        label: 'JIB',
+        data: [12900,15800,19500,24400,27500,34900,49900,69900,79900],
+        backgroundColor: 'rgba(54, 162, 235, 1)',        
+        borderColor: 'rgba(75, 192, 192, 1)',
+      },{
+        label: 'BaNANA',
+        data: [13200,14790,18900,24800,26900,35100,52900,72500,82900],
+        backgroundColor: '#c45850',
+        borderColor: 'rgba(75, 192, 192, 1)',
+      }]
+    };
+
+    // config 
+    const config = {
+      type: 'bar',
+      data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+    </script>
+
+  </body>
+</html>
